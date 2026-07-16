@@ -45,17 +45,18 @@ if st.button("Consult Council", type="primary"):
     else:
         # Define our three completely free models
         # Define our updated, active free models
+        # Define our three completely active, free models (All via OpenRouter!)
         models = {
-            "Google Gemini 2.5 Flash-Lite": {
-                "path": "gemini/gemini-2.5-flash-lite",
-                "key": gemini_key
-            },
-            "Meta Llama 3.3 70B (Free)": {
-                "path": "openrouter/meta-llama/llama-3-70b-instruct:free",
-                "key": openrouter_key
-            },
             "OpenAI GPT-OSS 20B (Free)": {
                 "path": "openrouter/openai/gpt-oss-20b:free",
+                "key": openrouter_key
+            },
+            "Google Gemma 2 9B (Free)": {
+                "path": "openrouter/google/gemma-2-9b-it:free",
+                "key": openrouter_key
+            },
+            "Meta Llama 3.3 70B (Free)": {
+                "path": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
                 "key": openrouter_key
             }
         }
