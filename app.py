@@ -44,6 +44,7 @@ if st.button("Consult Council", type="primary"):
     else:
         # Define three highly stable, fast models entirely hosted on Groq (All have 1,000+ daily free limit!)
         # The ultimate verified free models hosted directly on Groq
+        # Fully updated, officially active models hosted directly on Groq
         models = {
             "Meta Llama 3.3 70B (Groq Free)": {
                 "path": "groq/llama-3.3-70b-versatile",
@@ -53,8 +54,8 @@ if st.button("Consult Council", type="primary"):
                 "path": "groq/llama-3.1-8b-instant",
                 "key": groq_key
             },
-            "Gemma 2 9B (Groq Free)": {
-                "path": "groq/gemma2-9b-it",
+            "OpenAI GPT-OSS 20B (Groq Free)": {
+                "path": "groq/openai/gpt-oss-20b",
                 "key": groq_key
             }
         }
