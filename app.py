@@ -36,25 +36,24 @@ def get_model_opinion(model_path: str, api_key: str, sentence: str) -> dict:
 user_sentence = st.text_input("Enter a sentence for the council to analyze:", "I can't believe you did this for me!")
 
 if st.button("Consult Council", type="primary"):
-    # 1. Grab keys using the EXACT case-sensitive names from Streamlit Secrets
-    openrouter_key = os.getenv("OPENROUTER_API_KEY")
+    # Grab only the Groq key (We don't need OpenRouter anymore!)
     groq_key = os.getenv("GROQ_API_KEY")
     
-    if not openrouter_key or not groq_key:
-        st.error(f"API Keys are missing! Make sure OPENROUTER_API_KEY and GROQ_API_KEY are configured in your Secrets settings.")
+    if not groq_key:
+        st.error("Groq API Key is missing! Make sure GROQ_API_KEY is configured in your Secrets settings.")
     else:
-        # 2. Use stable active models on the open free tiers
+        # Define three highly stable, fast models entirely hosted on Groq (All have 1,000+ daily free limit!)
         models = {
-            "OpenAI GPT-OSS 20B (Free)": {
-                "path": "openrouter/openai/gpt-oss-20b:free",
-                "key": openrouter_key
-            },
-            "NVIDIA Nemotron 3 Ultra (Free)": {
-                "path": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
-                "key": openrouter_key
-            },
             "Meta Llama 3.3 70B (Groq Free)": {
                 "path": "groq/llama-3.3-70b-versatile",
+                "key": groq_key
+            },
+            "Qwen 3.6 27B (Groq Free)": {
+                "path": "groq/qwen/qwen3.6-27b",
+                "key": groq_key
+            },
+            "OpenAI GPT-OSS 20B (Groq Free)": {
+                "path": "groq/openai/gpt-oss-20b",
                 "key": groq_key
             }
         }
