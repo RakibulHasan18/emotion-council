@@ -48,6 +48,7 @@ if st.button("Consult Council", type="primary"):
         # Define our three completely active, free models (All via OpenRouter!)
         # Updated stable free models on OpenRouter
         # The new stable, 100% free council (Including Gemini!)
+        # The ultimate stable free council (Uses the OpenRouter Auto-Free Router for Slot 3!)
         models = {
             "OpenAI GPT-OSS 20B (Free)": {
                 "path": "openrouter/openai/gpt-oss-20b:free",
@@ -57,8 +58,8 @@ if st.button("Consult Council", type="primary"):
                 "path": "openrouter/nvidia/nemotron-3-nano-30b-a3b:free",
                 "key": openrouter_key
             },
-            "Google Gemini Flash (Free)": {
-                "path": "openrouter/google/gemini-2.5-flash:free",
+            "Google Gemma 4 / Free Router Slot": {
+                "path": "openrouter/free",
                 "key": openrouter_key
             }
         }
