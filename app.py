@@ -49,18 +49,22 @@ if st.button("Consult Council", type="primary"):
         # Updated stable free models on OpenRouter
         # The new stable, 100% free council (Including Gemini!)
         # The ultimate stable free council (Uses the OpenRouter Auto-Free Router for Slot 3!)
+        # Grab the Groq API key alongside OpenRouter
+        groq_key = os.getenv("GROQ_API_KEY")
+
+        # The Ultimate Multi-Provider Stable Free Council
         models = {
             "OpenAI GPT-OSS 20B (Free)": {
                 "path": "openrouter/openai/gpt-oss-20b:free",
                 "key": openrouter_key
             },
-            "NVIDIA Nemotron 3 Nano (Free)": {
-                "path": "openrouter/nvidia/nemotron-3-nano-30b-a3b:free",
+            "Tencent Hy3 MoE (Free)": {
+                "path": "openrouter/tencent/hy3:free",
                 "key": openrouter_key
             },
-            "Google Gemma 4 / Free Router Slot": {
-                "path": "openrouter/free",
-                "key": openrouter_key
+            "Meta Llama 3.3 70B (Groq Free)": {
+                "path": "groq/llama-3.3-70b-specdec",
+                "key": groq_key
             }
         }
         
