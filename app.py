@@ -36,34 +36,25 @@ def get_model_opinion(model_path: str, api_key: str, sentence: str) -> dict:
 user_sentence = st.text_input("Enter a sentence for the council to analyze:", "I can't believe you did this for me!")
 
 if st.button("Consult Council", type="primary"):
-    # Grab the API keys securely from the cloud settings
-    gemini_key = os.getenv("GEMINI_API_KEY")
+    # 1. Grab keys using the EXACT case-sensitive names from Streamlit Secrets
     openrouter_key = os.getenv("OPENROUTER_API_KEY")
+    groq_key = os.getenv("GROQ_API_KEY")
     
-    if not gemini_key or not openrouter_key:
-        st.error("API Keys are missing! Please configure them in your Host Settings.")
+    if not openrouter_key or not groq_key:
+        st.error(f"API Keys are missing! Make sure OPENROUTER_API_KEY and GROQ_API_KEY are configured in your Secrets settings.")
     else:
-        # Define our three completely free models
-        # Define our updated, active free models
-        # Define our three completely active, free models (All via OpenRouter!)
-        # Updated stable free models on OpenRouter
-        # The new stable, 100% free council (Including Gemini!)
-        # The ultimate stable free council (Uses the OpenRouter Auto-Free Router for Slot 3!)
-        # Grab the Groq API key alongside OpenRouter
-        groq_key = os.getenv("GROQ_API_KEY")
-
-        # The Ultimate Multi-Provider Stable Free Council
+        # 2. Use stable active models on the open free tiers
         models = {
             "OpenAI GPT-OSS 20B (Free)": {
                 "path": "openrouter/openai/gpt-oss-20b:free",
                 "key": openrouter_key
             },
-            "Tencent Hy3 MoE (Free)": {
-                "path": "openrouter/tencent/hy3:free",
+            "NVIDIA Nemotron 3 Ultra (Free)": {
+                "path": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
                 "key": openrouter_key
             },
             "Meta Llama 3.3 70B (Groq Free)": {
-                "path": "groq/llama-3.3-70b-specdec",
+                "path": "groq/llama-3.3-70b-versatile",
                 "key": groq_key
             }
         }
