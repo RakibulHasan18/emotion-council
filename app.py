@@ -44,13 +44,14 @@ if st.button("Consult Council", type="primary"):
         st.error("API Keys are missing! Please configure them in your Host Settings.")
     else:
         # Define our three completely free models
+        # Define our updated, active free models
         models = {
-            "Google Gemini 2.5 Flash": {
-                "path": "gemini/gemini-2.5-flash",
+            "Google Gemini 2.5 Flash-Lite": {
+                "path": "gemini/gemini-2.5-flash-lite",
                 "key": gemini_key
             },
-            "Meta Llama 3 8B (Free)": {
-                "path": "openrouter/meta-llama/llama-3-8b-instruct:free",
+            "Meta Llama 3.3 70B (Free)": {
+                "path": "openrouter/meta-llama/llama-3-70b-instruct:free",
                 "key": openrouter_key
             },
             "OpenAI GPT-OSS 20B (Free)": {
