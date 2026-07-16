@@ -43,17 +43,18 @@ if st.button("Consult Council", type="primary"):
         st.error("Groq API Key is missing! Make sure GROQ_API_KEY is configured in your Secrets settings.")
     else:
         # Define three highly stable, fast models entirely hosted on Groq (All have 1,000+ daily free limit!)
+        # The ultimate verified free models hosted directly on Groq
         models = {
             "Meta Llama 3.3 70B (Groq Free)": {
                 "path": "groq/llama-3.3-70b-versatile",
                 "key": groq_key
             },
-            "Qwen 3.6 27B (Groq Free)": {
-                "path": "groq/qwen/qwen3.6-27b",
+            "Meta Llama 3.1 8B (Groq Free)": {
+                "path": "groq/llama-3.1-8b-instant",
                 "key": groq_key
             },
-            "OpenAI GPT-OSS 20B (Groq Free)": {
-                "path": "groq/openai/gpt-oss-20b",
+            "Gemma 2 9B (Groq Free)": {
+                "path": "groq/gemma2-9b-it",
                 "key": groq_key
             }
         }
