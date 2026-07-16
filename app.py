@@ -46,17 +46,18 @@ if st.button("Consult Council", type="primary"):
         # Define our three completely free models
         # Define our updated, active free models
         # Define our three completely active, free models (All via OpenRouter!)
+        # Updated stable free models on OpenRouter
         models = {
             "OpenAI GPT-OSS 20B (Free)": {
                 "path": "openrouter/openai/gpt-oss-20b:free",
                 "key": openrouter_key
             },
-            "Google Gemma 2 9B (Free)": {
-                "path": "openrouter/google/gemma-2-9b-it:free",
+            "NVIDIA Nemotron 3 Nano (Free)": {
+                "path": "openrouter/nvidia/nemotron-3-nano-30b-a3b:free",
                 "key": openrouter_key
             },
-            "Meta Llama 3.3 70B (Free)": {
-                "path": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+            "OpenAI GPT-OSS 120B (Free)": {
+                "path": "openrouter/openai/gpt-oss-120b:free",
                 "key": openrouter_key
             }
         }
